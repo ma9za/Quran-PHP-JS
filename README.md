@@ -1,8 +1,6 @@
 # Quran-PHP-JS
 Website for the Holy Quran
 
-# Quran Recitation Website
-
 ## Introduction
 This website provides a platform for users to listen to Quran recitations by various renowned reciters. It features a simple, user-friendly interface for accessing and playing the audio of Quran suras (chapters).
 
