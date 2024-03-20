@@ -2,8 +2,8 @@
 $id = $_GET['id'] ?? 0;
 $jsonData = file_get_contents('Quran.json');
 $reciters = json_decode($jsonData, true)['reciters'];
-$surasArabic = explode("\n", file_get_contents('suras.txt')); // أسماء السور بالعربية
-$surasEnglish = explode("\n", file_get_contents('suras_english.txt')); // أسماء السور بالإنجليزية
+$surasArabic = explode("\n", file_get_contents('suras.txt')); // ملف اسماء السور بالعربية
+$surasEnglish = explode("\n", file_get_contents('suras_english.txt')); // ملف اسماء السور بالإنجليزية
 $selectedReciter = null;
 
 foreach ($reciters as $reciter) {
