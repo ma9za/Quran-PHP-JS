@@ -32,7 +32,7 @@ The `Quran.json` file contains a list of Quran reciters, each with the following
 - `id`: A unique identifier for the reciter.
 - `name`: The name of the reciter.
 - `Server`: The URL to the server where the reciter's audio files are hosted.
-- `rewaya`: The narration method of the recitation.
+- `rewaya`: 
 - `count`: The number of suras recited by the reciter.
 - `letter`: The first letter of the reciter's name (used for sorting).
 - `suras`: A comma-separated list of suras numbers available for this reciter.
