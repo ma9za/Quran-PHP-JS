@@ -1,16 +1,13 @@
 <?php
 session_start();
 
-// إنشاء أو فتح قاعدة البيانات SQLite
 $db = new SQLite3('visitors.db');
 $db->exec("CREATE TABLE IF NOT EXISTS visit_count (id INTEGER PRIMARY KEY, count INTEGER DEFAULT 1)");
 
-// تحديث عدد الزيارات
 $visitResult = $db->query("SELECT count FROM visit_count WHERE id = 1");
 $visitData = $visitResult->fetchArray();
 $totalVisits = $visitData ? $visitData['count'] : 0;
 
-// إذا كانت هذه أول زيارة للمستخدم الحالي
 if (!isset($_SESSION['visited'])) {
     $_SESSION['visited'] = true;
     $totalVisits++;
@@ -21,10 +18,8 @@ if (!isset($_SESSION['visited'])) {
     }
 }
 
-// الحصول على عدد الزوار الحاليين
 $currentVisitors = count($_SESSION);
 
-// تحميل البيانات
 $jsonData = file_get_contents('Quran.json');
 $reciters = json_decode($jsonData, true)['reciters'];
 $suras = explode("\n", file_get_contents('suras.txt'));
@@ -33,7 +28,6 @@ $suras = explode("\n", file_get_contents('suras.txt'));
 <html lang="ar" dir="rtl">
 <head>
     <title>موقع القران الكريم</title>
-          <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="استمع للقران الكريم" />
   <meta property="og:description" content="موقع للاستماع للقران الكريم للقراء المشهورين على مدار الساعة" />
